@@ -1,0 +1,25 @@
+{
+  "name": "weatherprediction",
+  "version": "1.0.0",
+  "description": "Predict Weather",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "request": "^2.87.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Codeiffor/WeatherPrediction.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Codeiffor/WeatherPrediction/issues"
+  },
+  "homepage": "https://github.com/Codeiffor/WeatherPrediction#readme"
+}
