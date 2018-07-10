@@ -1,16 +1,11 @@
 const express = require('express');
 const cors = require('cors');
-
 const app = express();
-
 var request = require('request');
-
 // automatically allow cross-origin requests
 app.use(cors({origin: true}));
-
 // build your endpoints here.
-app.get('/:location', (req, res, next) => {
-    //var woeid = "";
+app.get('/:location', (req, res) => {
     var options = {
         url: `https://www.metaweather.com/api/location/search/?query=${req.params.location}`,
         headers: {
