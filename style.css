@@ -1,0 +1,48 @@
+.selectCity{
+  border:2px solid gray;
+  padding:7em 0 1em 0;
+  height: 100%;
+  width:100%;
+}
+.predictions{
+  border:2px solid gray;
+  padding-bottom:1em;
+  padding-top:1em;
+  height: 100%;
+  width:100%;
+}
+.predictionRow{
+  /* height: 80%; */
+  width:100%;
+  margin:0
+}
+.upperPredictionWindow{
+  padding:1em;
+}
+.predictionWindow{
+  border:1px solid lightgray;
+  padding:0.5em;
+  height: 100%;
+  width:100%;
+}
+.input-group{
+  width:80%
+}
+.city,#getWeather{
+  border-radius:0;
+}
+.city:focus,#getWeather:focus{
+  box-shadow: none;
+  border-color: inherit;
+}
+.list{
+  width:80%;
+  background:white;
+  border:solid lightgray 1px;
+  border-top-width: 0;
+  font-size: 0.85em;
+}
+.list-group-item{
+  padding:4px 12px 0;
+  border:0
+}

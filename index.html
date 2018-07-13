@@ -4,310 +4,102 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Weather Prediction</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="jumbotron text-center mt-5">
-    <h3>Enter City for weather prediction</h3><br>
-    <input type="text" class='text-center' id='city' list='location_names' ><br><br>
-    <button id='getWeather'>click</button>
+
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Disabled</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+  <!-- navbar ends -->
+
+    
+  <div class="row mt-1 mx-2">
+  <!-- select city -->
+    <div class="col-md-4 col-sm-12">
+      <div class="col-12 selectCity bg-light">
+        <div class="input-group mx-auto">
+          <input type="text" class="city form-control" placeholder="City">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary"id='getWeather'type="button">--></button>
+          </div>
+        </div>
+        <div class="list mx-auto">
+          <!-- added through js -->
+        </div>
+      </div>
+    </div>
+  <!-- select city end -->
+
+  <!-- predictions -->
+    <div class="col-md-8 col-sm-12">
+      <div class="col-12 predictions">
+          <h3 class="text-center my-1 weatherResponse">Get Your Predictions Here...</h3>
+          <div class="row predictionRow">
+            <div class="col-md-6 col-sm-12 upperPredictionWindow">
+              <div class="col-12 predictionWindow">hello Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo laboriosam hic provident beatae maiores voluptatum blanditiis asperiores porro? Non ratione labore voluptates molestias laudantium beatae ex corporis quas vitae quam!</div>
+            </div>
+            <div class="col-md-6 col-sm-12 upperPredictionWindow">
+              <div class="col-12 predictionWindow">hello</div>
+            </div>
+            <div class="col-md-6 col-sm-12 upperPredictionWindow">
+              <div class="col-12 predictionWindow">hello Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi saepe quidem maxime incidunt impedit qui quisquam quod reiciendis magnam deleniti tempore cumque modi, aperiam animi fugit laboriosam voluptas esse. Repellendus?</div>
+            </div>
+            <div class="col-md-6 col-sm-12 upperPredictionWindow">
+              <div class="col-12 predictionWindow">hello</div>
+            </div>
+            <div class="col-md-6 col-sm-12 upperPredictionWindow">
+              <div class="col-12 predictionWindow">hello Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis fugiat recusandae, dolor, explicabo facilis iste temporibus modi neque, perspiciatis praesentium aut blanditiis? Nesciunt dolorum vero sunt officiis. Temporibus, velit eum?</div>
+            </div>
+            <div class="col-md-6 col-sm-12 upperPredictionWindow">
+              <div class="col-12 predictionWindow">hello</div>
+            </div>
+          </div>
+      </div>
+    </div>
   </div>
-  <br>
-  <div class="jumbotron text-center">
-      <p class="weatherResponse">Get Your Predictions Here...</p>
-  </div>
-  <datalist id="location_names">
-      <option value="London">
-      <option value="San Francisco">
-      <option value="New York">
-      <option value="Sydney">
-      <option value="Philadelphia">
-      <option value="Manchester">
-      <option value="Houston">
-      <option value="Birmingham">
-      <option value="Los Angeles">
-      <option value="Berlin">
-      <option value="Chicago">
-      <option value="Tokyo">
-      <option value="Beijing">
-      <option value="Mexico City">
-      <option value="Osaka">
-      <option value="Bristol">
-      <option value="Mumbai">
-      <option value="Glasgow">
-      <option value="Amsterdam">
-      <option value="Johannesburg">
-      <option value="Rio de Janeiro">
-      <option value="Shanghai">
-      <option value="New Delhi">
-      <option value="Jakarta">
-      <option value="Seoul">
-      <option value="São Paulo">
-      <option value="Moscow">
-      <option value="Hong Kong">
-      <option value="San Diego">
-      <option value="San Jose">
-      <option value="Dallas">
-      <option value="Indianapolis">
-      <option value="San Antonio">
-      <option value="Montréal">
-      <option value="Jacksonville">
-      <option value="Austin">
-      <option value="Kiev">
-      <option value="Phoenix">
-      <option value="Madrid">
-      <option value="Toronto">
-      <option value="Fort Worth">
-      <option value="Guangzhou">
-      <option value="Columbus">
-      <option value="Memphis">
-      <option value="Washington DC">
-      <option value="Paris">
-      <option value="Munich">
-      <option value="Brisbane">
-      <option value="Rome">
-      <option value="Milwaukee">
-      <option value="Bradford">
-      <option value="Liverpool">
-      <option value="Wakefield">
-      <option value="Istanbul">
-      <option value="El Paso">
-      <option value="Seattle">
-      <option value="Baltimore">
-      <option value="Las Vegas">
-      <option value="Melbourne">
-      <option value="Buenos Aires">
-      <option value="Boston">
-      <option value="Nashville">
-      <option value="Edinburgh">
-      <option value="Perth">
-      <option value="Karachi">
-      <option value="Hamburg">
-      <option value="Dubai">
-      <option value="Leeds">
-      <option value="Sheffield">
-      <option value="Adelaide">
-      <option value="Charlotte">
-      <option value="Detroit">
-      <option value="Louisville">
-      <option value="Barcelona">
-      <option value="Denver">
-      <option value="Portland">
-      <option value="Oklahoma City">
-      <option value="Cardiff">
-      <option value="Kolkata">
-      <option value="Cairo">
-      <option value="Virginia Beach">
-      <option value="Kinshasa">
-      <option value="Honolulu">
-      <option value="Tehrān">
-      <option value="Colorado Springs">
-      <option value="Auckland">
-      <option value="Dongguan">
-      <option value="Sacramento">
-      <option value="Kansas City">
-      <option value="Fresno">
-      <option value="Bangkok">
-      <option value="Ho Chi Minh City">
-      <option value="Mesa">
-      <option value="Atlanta">
-      <option value="Bangalore">
-      <option value="Lima">
-      <option value="Albuquerque">
-      <option value="Tucson">
-      <option value="Lagos">
-      <option value="Long Beach">
-      <option value="Shenzhen">
-      <option value="Bogotá">
-      <option value="Omaha">
-      <option value="Raleigh">
-      <option value="Miami">
-      <option value="Exeter">
-      <option value="Hà Nội">
-      <option value="Casablanca">
-      <option value="Singapore">
-      <option value="Yokohama">
-      <option value="Nairobi">
-      <option value="Tianjin">
-      <option value="Dhaka">
-      <option value="Pyongyang">
-      <option value="Addis Ababa">
-      <option value="Hyderabad">
-      <option value="Santa Cruz">
-      <option value="Dublin">
-      <option value="Budapest">
-      <option value="Milan">
-      <option value="Cambridge">
-      <option value="Oxford">
-      <option value="Vienna">
-      <option value="Brussels">
-      <option value="Cologne">
-      <option value="Riyadh">
-      <option value="Damascus">
-      <option value="Ankara">
-      <option value="Little Rock">
-      <option value="Wilmington">
-      <option value="Santiago">
-      <option value="Birmingham">
-      <option value="Baghdad">
-      <option value="Boise">
-      <option value="Anchorage">
-      <option value="Athens">
-      <option value="Santorini">
-      <option value="Reykjavík">
-      <option value="Sofia">
-      <option value="Prague">
-      <option value="Zagreb">
-      <option value="Oslo">
-      <option value="Copenhagen">
-      <option value="Bucharest">
-      <option value="Torino">
-      <option value="Stockholm">
-      <option value="Naples">
-      <option value="Warsaw">
-      <option value="Bridgeport">
-      <option value="Wichita">
-      <option value="Richmond">
-      <option value="New Orleans">
-      <option value="Calgary">
-      <option value="Edmonton">
-      <option value="St Petersburg">
-      <option value="Manila">
-      <option value="Vancouver">
-      <option value="Maracaibo">
-      <option value="Caracas">
-      <option value="Cheyenne">
-      <option value="Charleston">
-      <option value="Santander">
-      <option value="İzmir">
-      <option value="Toulouse">
-      <option value="Bordeaux">
-      <option value="Wuhan">
-      <option value="Marseille">
-      <option value="Lille">
-      <option value="Ahmedabad">
-      <option value="Lyon">
-      <option value="Nice">
-      <option value="Lahore">
-      <option value="Belfast">
-      <option value="Bremen">
-      <option value="Stoke-on-Trent">
-      <option value="Fargo">
-      <option value="Sendai">
-      <option value="Truro">
-      <option value="Preston">
-      <option value="Sunderland">
-      <option value="Lisbon">
-      <option value="Phuket">
-      <option value="Palm Springs">
-      <option value="Leicester">
-      <option value="Stuttgart">
-      <option value="Coventry">
-      <option value="Gothenburg">
-      <option value="Hanover">
-      <option value="St. Louis">
-      <option value="Salvador">
-      <option value="Plymouth">
-      <option value="Lake Tahoe">
-      <option value="Nuremberg">
-      <option value="Mountain View">
-      <option value="Kawasaki">
-      <option value="Kyoto">
-      <option value="Kobe">
-      <option value="Hangzhou">
-      <option value="Blackpool">
-      <option value="Yangon">
-      <option value="Bakersfield">
-      <option value="Salt Lake City">
-      <option value="Geneva">
-      <option value="Portland">
-      <option value="Reading">
-      <option value="Durban">
-      <option value="Saitama">
-      <option value="Brighton">
-      <option value="Dresden">
-      <option value="Ajaccio">
-      <option value="Pune">
-      <option value="Mombasa">
-      <option value="Providence">
-      <option value="Chennai">
-      <option value="Kharkiv">
-      <option value="Helsinki">
-      <option value="Taipei">
-      <option value="Essen">
-      <option value="St Ives">
-      <option value="Aberdeen">
-      <option value="Oakland">
-      <option value="Sapporo">
-      <option value="Ipswich">
-      <option value="Norwich">
-      <option value="Christchurch">
-      <option value="Surat">
-      <option value="Busan">
-      <option value="Manchester">
-      <option value="Hiroshima">
-      <option value="Northampton">
-      <option value="Leipzig">
-      <option value="Southend-on-Sea">
-      <option value="The Hague">
-      <option value="Minsk">
-      <option value="Salford">
-      <option value="Kirkwall">
-      <option value="Swansea">
-      <option value="Penzance">
-      <option value="Ibadan">
-      <option value="Billings">
-      <option value="Alexandria">
-      <option value="Newcastle">
-      <option value="Jackson">
-      <option value="Sioux Falls">
-      <option value="Nagoya">
-      <option value="Swindon">
-      <option value="Brasília">
-      <option value="Dundee">
-      <option value="Kano">
-      <option value="Kitakyushu">
-      <option value="Denpasar">
-      <option value="Boulder">
-      <option value="Minneapolis">
-      <option value="Frankfurt">
-      <option value="Falmouth">
-      <option value="Middlesbrough">
-      <option value="Rhyl">
-      <option value="Bournemouth">
-      <option value="Fukuoka">
-      <option value="Newark">
-      <option value="Manukau">
-      <option value="Luton">
-      <option value="Wellington">
-      <option value="Abidjan">
-      <option value="Kingston upon Hull">
-      <option value="Des Moines">
-      <option value="Windhoek">
-      <option value="Calvi">
-      <option value="Venice">
-      <option value="Santa Cruz de Tenerife">
-      <option value="Chengdu">
-      <option value="York">
-      <option value="Kuala Lumpur">
-      <option value="Portsmouth">
-      <option value="Burlington">
-      <option value="Santa Fe">
-      <option value="Zurich">
-      <option value="Nottingham">
-      <option value="Derby">
-      <option value="Huddersfield">
-      <option value="Dortmund">
-      <option value="Wolverhampton">
-      <option value="Cape Town">
-      <option value="Düsseldorf">
-      <option value="Columbia">
-    </datalist>
+  <!-- predictions end -->
 
 
+  <!-- scripts -->
   <script src="main.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 </body>
 </html>
