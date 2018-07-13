@@ -1,11 +1,16 @@
+body{
+  background: linear-gradient(to right,#070d49, #900000);
+}
 .selectCity{
   border:2px solid gray;
-  padding:7em 0 1em 0;
+  background: rgba(0,0,0,0.5);
+  padding:3em 0 3em 0;
   height: 100%;
   width:100%;
 }
 .predictions{
   border:2px solid gray;
+  background: rgba(0,0,0,0.5);
   padding-bottom:1em;
   padding-top:1em;
   height: 100%;
@@ -21,6 +26,9 @@
 }
 .predictionWindow{
   border:1px solid lightgray;
+  background: rgba(0,0,0,0.2);
+  border-radius: 5px;
+  color:white;
   padding:0.5em;
   height: 100%;
   width:100%;
@@ -30,19 +38,28 @@
 }
 .city,#getWeather{
   border-radius:0;
+  border:solid black 1px;
+  background:white;
 }
 .city:focus,#getWeather:focus{
   box-shadow: none;
-  border-color: inherit;
+  border:solid black 1px;
 }
 .list{
   width:80%;
   background:white;
-  border:solid lightgray 1px;
+  border:solid lightgray 2px;
   border-top-width: 0;
+  border-bottom-width:0;
   font-size: 0.85em;
 }
 .list-group-item{
-  padding:4px 12px 0;
+  padding:2px 12px 2px;
   border:0
+}
+.weatherResponse{
+  color:white;
+}
+.bg1{
+  background: lightgray;
 }
