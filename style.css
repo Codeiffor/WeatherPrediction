@@ -1,5 +1,17 @@
 body{
-  background: linear-gradient(to right,#070d49, #900000);
+  display:block;
+}
+#particles{
+  position: fixed;
+}
+.navbar{
+  background:rgba(0,0,0, 0.3);
+}
+.navbar-brand{
+  color:white;
+}
+.navbar-brand:hover{
+  color:lightgray;
 }
 .selectCity{
   border:2px solid gray;
@@ -58,7 +70,7 @@ body{
   border:0
 }
 .weatherResponse{
-  color:white;
+  color:lightblue;
 }
 .bg1{
   background: lightgray;

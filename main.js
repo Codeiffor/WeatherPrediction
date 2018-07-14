@@ -36,19 +36,17 @@ city.addEventListener('keydown',function(event){
     listGroupItem=document.querySelectorAll('.list-group-item');
     for(i=0;i<listGroupItem.length;i++){
       listGroupItem[i].addEventListener('mouseenter',function(event){
-        // for(j=0;j<listGroupItem.length;j++)
-        //   listGroupItem[j].classList.remove('bg1');
         this.className+=' bg1';
-        this.addEventListener('click',function(event){ //on clicking any list value
-          city.value=this.innerHTML;
-          list.innerHTML='';
-          window.setTimeout(function(){
-            getWeather.click(); //click button
-          },10);
-        });
       });
       listGroupItem[i].addEventListener('mouseleave',function(event){
         this.classList.remove('bg1');
+      });
+      listGroupItem[i].addEventListener('click',function(event){ //on clicking any list value
+        city.value=this.innerHTML;
+        list.innerHTML='';
+        window.setTimeout(function(){
+          getWeather.click(); //click button
+        },10);
       });
     }
   },1);
@@ -57,25 +55,28 @@ city.addEventListener('keydown',function(event){
 //click listener on button
 getWeather.addEventListener('click',function(event){
   list.innerHTML='';
-  window.setTimeout(function(){
-    resp=getXhr();
-    console.log(resp);    
-    resp=JSON.parse(resp);
-    weatherResponse.innerHTML='<h3>Weather of '+resp['title']+'</h3>';
-    for(var i=0;i<6;i++){
-      innerHtml='Weather for = '+resp['consolidated_weather'][i]['applicable_date']+
-      '<br>Max Temperature = '+Math.round(resp['consolidated_weather'][i]['max_temp'])+
-      '°C<br>Min Temperature = '+Math.round(resp['consolidated_weather'][i]['min_temp'])+
-      '°C<br>State = '+resp['consolidated_weather'][i]['weather_state_name'];
-      predictionWindow[i].innerHTML=innerHtml;
-    }
-  },5);
+  getXhr();
+  for(var i=0;i<6;i++){
+    predictionWindow[i].innerHTML='<img class="my-5 mx-auto" src="img/loading.svg" alt="Get Weather">';
+  }
 });
 //function interacting with server
 function getXhr(){
   theUrl='http://localhost:3001/'+city.value;
-  xmlHttp = new XMLHttpRequest();
-  xmlHttp.open( "GET", theUrl,false);
+  var xmlHttp = new XMLHttpRequest();
+  xmlHttp.open( "GET", theUrl,true);
   xmlHttp.send( null );
-  return(xmlHttp.responseText);
+  xmlHttp.onreadystatechange = function() {
+    resp=xmlHttp.responseText;
+    console.log(resp);    
+    resp=JSON.parse(resp);
+    weatherResponse.innerHTML='<h3>Weather of '+resp['title']+'</h3>';
+    for(var i=0;i<6;i++){
+      innerHtml='<div class="my-1">Weather for = '+resp['consolidated_weather'][i]['applicable_date']+
+      '<br>Max Temperature = '+Math.round(resp['consolidated_weather'][i]['max_temp'])+
+      '°C<br>Min Temperature = '+Math.round(resp['consolidated_weather'][i]['min_temp'])+
+      '°C<br>State = '+resp['consolidated_weather'][i]['weather_state_name']+'</div';
+      predictionWindow[i].innerHTML=innerHtml;
+    }
+  }
 }
