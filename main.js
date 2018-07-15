@@ -47,7 +47,7 @@ city.addEventListener('keydown',function(event){
         },10);
       });
     }
-  },1);
+  },10);
 });
 
 //auto focus on input

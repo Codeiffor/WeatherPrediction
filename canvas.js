@@ -39,24 +39,27 @@ function loadcanvas(){
         yspeed:speed*Math.sin(angle)
       });
     }
-    document.addEventListener('click',function(event){
-      var newparticles;
-      var l=particles.length;
-      if(l>250)newparticles=1;
-      else if(l>200)newparticles=2;
-      else if(l>150)newparticles=5;
-      else newparticles=10;
-      for(var i=0;i<newparticles;i++){
-        var speed=Math.random()*count/25+1;
-        var angle=Math.random()*2*Math.PI;  
-        particles.push({
-          x:event.pageX+Math.random()*10-5,
-          y:event.pageY+Math.random()*10-5,
-          xspeed:speed*Math.cos(angle),
-          yspeed:speed*Math.sin(angle)
-        });
-      }
-    });
+
+    //--------add more particles on click---------
+    
+    // document.addEventListener('click',function(event){
+    //   var newparticles;
+    //   var l=particles.length;
+    //   if(l>250)newparticles=1;
+    //   else if(l>200)newparticles=2;
+    //   else if(l>150)newparticles=5;
+    //   else newparticles=10;
+    //   for(var i=0;i<newparticles;i++){
+    //     var speed=Math.random()*count/25+1;
+    //     var angle=Math.random()*2*Math.PI;  
+    //     particles.push({
+    //       x:event.pageX+Math.random()*10-5,
+    //       y:event.pageY+Math.random()*10-5,
+    //       xspeed:speed*Math.cos(angle),
+    //       yspeed:speed*Math.sin(angle)
+    //     });
+    //   }
+    // });
     
     function particleRecovery(i){
       if(particles[i].x<0){
