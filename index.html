@@ -11,11 +11,10 @@
 <body>
   <!-- canvas background -->
   <canvas id='particles' width="" height=""></canvas>
-  <script src="canvas.js"></script>
 
   <!-- navbar -->
   <nav class="navbar navbar-expand-lg">
-    <a class="navbar-brand" href="#">Weather Prediction</a>
+    <a class="navbar-brand ml-2" href="#">Weather Prediction</a>
     <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -54,7 +53,7 @@
     
   <div class="row mx-2">
   <!-- select city -->
-    <div class="col-md-4 col-sm-12 mt-3 mb-auto">
+    <div class="col-md-4 col-sm-12 mt-1 mb-auto">
       <div class="col-12 selectCity">
         <div class="input-group mx-auto">
           <input type="text" class="city form-control" placeholder="City">
@@ -70,9 +69,9 @@
   <!-- select city end -->
 
   <!-- predictions -->
-    <div class="col-md-8 col-sm-12 mt-3">
+    <div class="col-md-8 col-sm-12 mt-1">
       <div class="col-12 predictions">
-          <h3 class="text-center my-1 weatherResponse">Get Your Predictions Here...</h3>
+          <h5 class="text-center weatherResponse">Get Your Predictions Here...</h5>
           <div class="row predictionRow">
             <div class="col-md-6 col-sm-12 upperPredictionWindow">
               <div class="col-12 predictionWindow text-center py-4"><img class='my-4' src="img/icon-rainy.png" height="50px" alt="icon-rainy">
@@ -107,6 +106,7 @@
 
   <!-- scripts -->
   <script src="main.js"></script>
+  <script src="canvas.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>

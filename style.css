@@ -1,28 +1,31 @@
 body{
+  background: rgb(0, 9, 24);
   display:block;
 }
 #particles{
   position: fixed;
 }
 .navbar{
-  background:rgba(0,0,0, 0.3);
+  padding:15px;
+  background: linear-gradient(to bottom, rgba(1, 0, 58, 0.9) 0%, rgba(0, 0, 0,0) 100%);
 }
 .navbar-brand{
-  color:white;
+  color:rgb(255, 255, 255);
 }
 .navbar-brand:hover{
   color:lightgray;
 }
 .selectCity{
   border:2px solid gray;
-  background: rgba(0,0,0,0.5);
+  /* background: rgba(124, 124, 124, 0.25); */
+  background: linear-gradient(to bottom,rgba(0, 0, 0, 0),rgba(170, 0, 0, 0.5),rgba(0, 0, 0, 0));
   padding:3em 0 3em 0;
   height: 100%;
   width:100%;
 }
 .predictions{
   border:2px solid gray;
-  background: rgba(0,0,0,0.5);
+  /* background: rgba(124, 124, 124, 0.1); */
   padding-bottom:1em;
   padding-top:1em;
   height: 100%;
@@ -38,7 +41,7 @@ body{
 }
 .predictionWindow{
   border:1px solid lightgray;
-  background: rgba(0,0,0,0.2);
+  background: linear-gradient(to bottom, rgba(1, 0, 58, 0.671) 0%, rgba(0, 0, 0,0.9) 90%);
   border-radius: 5px;
   color:white;
   padding:0.5em;
@@ -70,7 +73,9 @@ body{
   border:0
 }
 .weatherResponse{
-  color:lightblue;
+  color:rgb(216, 216, 216);
+  background: linear-gradient(to right,rgba(0, 0, 0, 0),rgba(158, 0, 0, 0.5),rgba(0, 0, 0, 0));
+  padding:5px
 }
 .bg1{
   background: lightgray;
