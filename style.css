@@ -25,6 +25,9 @@ body{
   height: 100%;
   width:100%;
 }
+.messageWindow{
+  color:yellow;
+}
 .predictions{
   border:2px solid gray;
   /* background: rgba(124, 124, 124, 0.1); */

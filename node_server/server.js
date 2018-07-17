@@ -23,19 +23,19 @@ app.get('/:location', (req, res) => {
                     }
                 }, (error2, response2, body2) => {
                     if(JSON.parse(body).length === 0) res.send({
-                        message: "invalid location"
+                        message: "Invalid Location"
                     })
                     else if(!error2 && response2.statusCode === 200) res.send(JSON.parse(body2));
-                    else res.send("Something wrong");
+                    else res.send("Something Went Wrong");
                 });
             }
             else res.send({
-                message: "invalid location"
+                message: "Invalid Location"
             });
             return
         }
         res.send({
-            message: "something went wrong",
+            message: "Something Went Wrong",
             "error": error
         });
     }
