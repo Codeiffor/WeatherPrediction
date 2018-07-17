@@ -173,7 +173,7 @@ function DisplayWeather(resp){
       if(i==1)day='Tomorrow';
       innerHtml='<div style="font-size: 1.3em;font-family:"Courier New", Courier, monospace;font-weight: 600;color:palegreen">'
       +day
-      +'</div><div><img src="/img/'
+      +'</div><div><img src="./img/'
       +resp["consolidated_weather"][i]["weather_state_abbr"]
       +'.png"height="40px"></div><div style="font-size: 0.9em">'
       +resp["consolidated_weather"][i]["weather_state_name"]
